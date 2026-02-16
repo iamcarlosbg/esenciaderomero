@@ -119,11 +119,24 @@ images.forEach(img => imageObserver.observe(img));
  * basándose en la configuración de config.js
  */
 function loadSocialLinks() {
+    console.log('🔗 Cargando redes sociales...');
+    
     const socialContainer = document.getElementById('socialLinks');
     
-    // Verificar que existe el contenedor y la configuración
-    if (!socialContainer || typeof CONFIG === 'undefined') {
-        console.error('No se pudo cargar la configuración de redes sociales');
+    // Verificar que existe el contenedor
+    if (!socialContainer) {
+        console.error('❌ No se encontró el contenedor #socialLinks');
+        return;
+    }
+    
+    // Verificar que existe la configuración
+    if (typeof CONFIG === 'undefined') {
+        console.error('❌ No se pudo cargar CONFIG desde config.js');
+        return;
+    }
+    
+    if (!CONFIG.social) {
+        console.error('❌ CONFIG.social no está definido');
         return;
     }
     
@@ -146,9 +159,13 @@ function loadSocialLinks() {
     // Limpiar el contenedor
     socialContainer.innerHTML = '';
     
+    let linksAdded = 0;
+    
     // Recorrer las redes sociales en la configuración
-    Object.keys(CONFIG.social).forEach(socialNetwork => {
+    Object.keys(CONFIG.social).forEach((socialNetwork, index) => {
         const config = CONFIG.social[socialNetwork];
+        
+        console.log(`  → ${socialNetwork}: enabled=${config.enabled}, url=${config.url}`);
         
         // Solo mostrar si está habilitada y tiene URL
         if (config.enabled && config.url) {
@@ -167,29 +184,30 @@ function loadSocialLinks() {
             // Agregar el icono al enlace
             link.appendChild(icon);
             
-            // Agregar animación de entrada
-            link.style.opacity = '0';
-            link.style.transform = 'translateY(20px)';
-            
             // Agregar al contenedor
             socialContainer.appendChild(link);
             
-            // Animar la aparición
+            // Animar la aparición con delay
             setTimeout(() => {
-                link.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 link.style.opacity = '1';
                 link.style.transform = 'translateY(0)';
-            }, 100);
+            }, 100 * (index + 1));
+            
+            linksAdded++;
         }
     });
     
+    console.log(`✅ ${linksAdded} redes sociales cargadas correctamente`);
+    
     // Si no hay redes habilitadas, mostrar un mensaje opcional
-    if (socialContainer.children.length === 0) {
+    if (linksAdded === 0) {
         const message = document.createElement('p');
-        message.textContent = 'Síguenos en redes sociales';
+        message.textContent = 'Próximamente en redes sociales';
         message.style.color = 'var(--color-beige)';
         message.style.fontSize = '0.9rem';
+        message.style.opacity = '0.7';
         socialContainer.appendChild(message);
+        console.log('ℹ️ No hay redes sociales habilitadas');
     }
 }
 
