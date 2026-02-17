@@ -52,12 +52,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// REVEAL ANIMATIONS: Elementos aparecen al hacer scroll
+// REVEAL ANIMATIONS: Elementos aparecen al hacer scroll (OPCIONAL)
 // ============================================
 
 const revealElements = document.querySelectorAll('.reveal');
 
 const revealOnScroll = () => {
+    // Esta función está deshabilitada por defecto para evitar contenido en blanco
+    // Si quieres habilitar las animaciones, descomenta el código siguiente:
+    
+    /*
     const windowHeight = window.innerHeight;
     const revealPoint = 100;
     
@@ -68,11 +72,12 @@ const revealOnScroll = () => {
             element.classList.add('active');
         }
     });
+    */
 };
 
-// Ejecutar al cargar y al hacer scroll
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+// Ejecutar al cargar y al hacer scroll (deshabilitado por defecto)
+// window.addEventListener('scroll', revealOnScroll);
+// window.addEventListener('load', revealOnScroll);
 
 // ============================================
 // PARALLAX EFFECT en Hero
@@ -279,9 +284,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cargar redes sociales dinámicamente
     loadSocialLinks();
     
-    // Ejecutar reveal inicial
-    revealOnScroll();
-    
     // Agregar clase loaded al body para animaciones CSS
     setTimeout(() => {
         document.body.classList.add('loaded');
@@ -325,13 +327,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// Optimizar el evento scroll con debounce
-const optimizedScroll = debounce(() => {
-    revealOnScroll();
-}, 50);
-
-window.addEventListener('scroll', optimizedScroll);
 
 // ============================================
 // EASTER EGG: Mensaje en consola
