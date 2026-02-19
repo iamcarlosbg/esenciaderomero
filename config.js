@@ -63,7 +63,7 @@ const CONFIG = {
         // YouTube
         youtube: {
             enabled: true,  // Cambiar a true para mostrar
-            url: "https://youtube.com/@esenciaderomero"  // Tu canal de YouTube
+            url: "https://youtube.com/@eva.romero"  // Tu canal de YouTube
         },
         
         // TikTok
