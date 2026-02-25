@@ -1,0 +1,15 @@
+# netlify.toml
+# Configuración de Netlify para Esencia de Romero
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Redireccionamiento para SPA (opcional, por si añades rutas)
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200

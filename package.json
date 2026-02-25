@@ -1,0 +1,8 @@
+{
+  "name": "esencia-de-romero",
+  "version": "1.0.0",
+  "description": "Tienda online de jabones artesanales Esencia de Romero",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

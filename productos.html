@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda de Esencia de Romero – Jabones artesanales naturales, champús sólidos y más.">
+    <title>Tienda | Esencia de Romero</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos base del sitio -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos propios de la tienda -->
+    <link rel="stylesheet" href="tienda.css">
+</head>
+<body>
+
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <nav class="navbar visible" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration:none;color:inherit">Esencia de Romero</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
+                <li><a href="productos.html" class="nav-link active">Tienda</a></li>
+                <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <!-- Botón carrito (desktop y mobile) -->
+            <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Abrir carrito">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+            <!-- Hamburguesa mobile -->
+            <button class="nav-hamburger" id="navHamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════ HERO TIENDA ═══════════ -->
+    <header class="tienda-hero">
+        <div class="tienda-hero__inner">
+            <span class="section-label">Colección artesanal</span>
+            <h1 class="tienda-hero__titulo">Nuestra Tienda</h1>
+            <div class="decorative-line" style="margin:1.5rem auto"></div>
+            <p class="tienda-hero__sub">Jabones de aceites, glicerina y champús sólidos elaborados con amor y dedicación.</p>
+        </div>
+    </header>
+
+    <!-- ═══════════ LAYOUT PRINCIPAL ═══════════ -->
+    <div class="tienda-layout">
+
+        <!-- ── PANEL DE FILTROS ── -->
+        <aside class="filtros-panel" id="filtrosPanel">
+            <div class="filtros-panel__cabecera">
+                <h2><i class="fas fa-sliders-h"></i> Filtrar</h2>
+                <button class="filtros-limpiar" id="limpiarFiltros">Limpiar todo</button>
+            </div>
+
+            <!-- Búsqueda -->
+            <div class="filtro-grupo">
+                <label class="filtro-etiqueta" for="busquedaInput">Buscar producto</label>
+                <div class="filtro-input-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="busquedaInput" placeholder="Nombre o ingrediente…" />
+                </div>
+            </div>
+
+            <!-- Tipo -->
+            <div class="filtro-grupo">
+                <label class="filtro-etiqueta">Tipo de producto</label>
+                <div class="filtro-checks" id="categoriaFiltros">
+                    <!-- JS dinámico -->
+                </div>
+            </div>
+
+            <!-- Aroma -->
+            <div class="filtro-grupo">
+                <label class="filtro-etiqueta">Aroma</label>
+                <div class="filtro-checks" id="aromaFiltros">
+                    <!-- JS dinámico -->
+                </div>
+            </div>
+
+            <!-- Ingredientes -->
+            <div class="filtro-grupo">
+                <label class="filtro-etiqueta">Ingredientes</label>
+                <div class="filtro-checks filtro-checks--scroll" id="ingredienteFiltros">
+                    <!-- JS dinámico -->
+                </div>
+            </div>
+
+            <!-- Precio -->
+            <div class="filtro-grupo">
+                <label class="filtro-etiqueta">
+                    Precio máximo: <strong id="precioLabel">15 €</strong>
+                </label>
+                <input type="range" id="precioRange" class="filtro-range" min="0" max="15" step="0.5" value="15" />
+                <div class="filtro-range-limites"><span>0 €</span><span>15 €</span></div>
+            </div>
+
+            <!-- Solo en stock -->
+            <div class="filtro-grupo">
+                <label class="filtro-check-item">
+                    <input type="checkbox" id="soloStock" />
+                    <span>Solo productos disponibles</span>
+                </label>
+            </div>
+        </aside>
+
+        <!-- ── ÁREA DE PRODUCTOS ── -->
+        <section class="productos-area">
+
+            <!-- Barra superior -->
+            <div class="productos-topbar">
+                <p class="productos-conteo" id="productosConteo">Cargando…</p>
+                <div class="productos-topbar__acciones">
+                    <select id="ordenSelect" class="ordenar-select" aria-label="Ordenar productos">
+                        <option value="default">Orden por defecto</option>
+                        <option value="precio-asc">Precio: menor a mayor</option>
+                        <option value="precio-desc">Precio: mayor a menor</option>
+                        <option value="nombre">Nombre A–Z</option>
+                    </select>
+                    <button class="btn-filtros-mobile" id="btnFiltrosMobile">
+                        <i class="fas fa-sliders-h"></i> Filtros
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="productos-grid" id="productosGrid">
+                <!-- JS dinámico -->
+            </div>
+
+            <!-- Estado vacío -->
+            <div class="estado-vacio" id="estadoVacio" hidden>
+                <i class="fas fa-search" style="font-size:2.5rem;color:var(--color-verde-romero);opacity:.4;margin-bottom:1rem"></i>
+                <p>No encontramos productos con esos filtros.</p>
+                <button class="btn-primary" id="resetVacio" style="display:inline-block;margin-top:1.25rem;font-size:.9rem;padding:.75rem 2rem">
+                    Limpiar filtros
+                </button>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- ═══════════ OVERLAY FILTROS MOBILE ═══════════ -->
+    <div class="overlay-filtros" id="overlayFiltros"></div>
+
+    <!-- ═══════════ CARRITO LATERAL ═══════════ -->
+    <div class="overlay-carrito" id="overlayCarrito"></div>
+
+    <aside class="carrito-panel" id="carritoPanel" aria-label="Carrito de compra">
+        <div class="carrito-panel__cabecera">
+            <h2><i class="fas fa-shopping-bag"></i> Tu carrito</h2>
+            <button class="carrito-cerrar" id="carritoCerrar" aria-label="Cerrar carrito">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Items -->
+        <div class="carrito-items" id="carritoItems"></div>
+
+        <!-- Vacío -->
+        <div class="carrito-vacio" id="carritoVacio">
+            <i class="fas fa-shopping-bag"></i>
+            <p>Tu carrito está vacío</p>
+            <a href="#productosGrid" class="btn-primary" style="display:inline-block;margin-top:1.25rem;font-size:.85rem;padding:.7rem 1.75rem">
+                Ver productos
+            </a>
+        </div>
+
+        <!-- Footer carrito -->
+        <div class="carrito-footer" id="carritoFooter" hidden>
+            <div class="carrito-subtotal">
+                <span>Subtotal</span>
+                <strong id="carritoSubtotal">0,00 €</strong>
+            </div>
+            <p class="carrito-nota"><i class="fas fa-truck"></i> Envío calculado al finalizar. IVA incluido.</p>
+            <button class="btn-checkout" id="btnCheckout">
+                Finalizar compra <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ═══════════ MODAL DETALLE PRODUCTO ═══════════ -->
+    <div class="overlay-modal" id="overlayModal"></div>
+    <div class="producto-modal" id="productoModal" role="dialog" aria-modal="true" hidden>
+        <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        <div class="producto-modal__contenido" id="modalContenido"></div>
+    </div>
+
+    <!-- ═══════════ TOAST ═══════════ -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Esencia de Romero</h3>
+                    <p>Jabones artesanales naturales</p>
+                </div>
+                <div class="footer-social" id="socialLinks"></div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Esencia de Romero. Hecho con <i class="fas fa-heart"></i> por Eva</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════ SCRIPTS ═══════════ -->
+    <!-- Stripe.js (se carga siempre pero solo actúa al hacer checkout) -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Configuración (redes sociales, Stripe keys, etc.) -->
+    <script src="config.js"></script>
+    <!-- Lógica de la tienda -->
+    <script src="tienda.js"></script>
+
+</body>
+</html>

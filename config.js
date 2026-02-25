@@ -63,7 +63,7 @@ const CONFIG = {
         // YouTube
         youtube: {
             enabled: true,  // Cambiar a true para mostrar
-            url: "https://youtube.com/@eva.romero"  // Tu canal de YouTube
+            url: "https://youtube.com/@esenciaderomero"  // Tu canal de YouTube
         },
         
         // TikTok
@@ -83,12 +83,21 @@ const CONFIG = {
         location: "España"
     },
     
-    // Configuración de la tienda (para futuras implementaciones)
-    shop: {
-        enabled: false,  // Si habilitas una tienda online en el futuro
-        currency: "EUR",
-        shipping: true
-    }
+    // ─── TIENDA / STRIPE ────────────────────────────────────────
+    // Clave PÚBLICA de Stripe (empieza con pk_test_ o pk_live_)
+    // La clave SECRETA va SOLO en variables de entorno de Netlify.
+    // ────────────────────────────────────────────────────────────
+    stripe: {
+        publicKey:  "pk_test_PON_AQUI_TU_CLAVE_PUBLICA",
+        sessionUrl: "/.netlify/functions/create-checkout-session"
+    },
+
+    // Ruta al JSON de productos
+    productsJson: "products.json",
+
+    // URLs tras el pago (actualiza con tu dominio real)
+    successUrl: "https://TU_DOMINIO.netlify.app/gracias.html",
+    cancelUrl:  "https://TU_DOMINIO.netlify.app/productos.html"
 };
 
 // ============================================

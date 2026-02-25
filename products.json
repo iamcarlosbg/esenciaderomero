@@ -1,0 +1,110 @@
+[
+  {
+    "id": "jabon-aceite-romero-lavanda",
+    "nombre": "Romero & Lavanda",
+    "categoria": "jabones-aceite",
+    "precio": 9.50,
+    "aroma": "Lavanda",
+    "imagen": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=80",
+    "descripcion_corta": "Jabón de aceites naturales con proceso de saponificación en frío. Combina las propiedades antisépticas del romero con el aroma relajante de la lavanda.",
+    "ingredientes": ["aceite de oliva", "romero", "lavanda", "sosa cáustica"],
+    "stock": true,
+    "destacado": true
+  },
+  {
+    "id": "jabon-aceite-avena-miel",
+    "nombre": "Avena & Miel",
+    "categoria": "jabones-aceite",
+    "precio": 9.00,
+    "aroma": "Miel",
+    "imagen": "https://images.unsplash.com/photo-1600857544200-242b1c944ce6?w=600&q=80",
+    "descripcion_corta": "Suavidad extrema para pieles sensibles. La avena exfolia suavemente mientras la miel nutre e hidrata. Rico en aceites vegetales de primera calidad.",
+    "ingredientes": ["aceite de coco", "avena", "miel orgánica", "sosa cáustica"],
+    "stock": true,
+    "destacado": false
+  },
+  {
+    "id": "jabon-aceite-carbon-activado",
+    "nombre": "Carbón Activado",
+    "categoria": "jabones-aceite",
+    "precio": 10.00,
+    "aroma": "Árbol de Té",
+    "imagen": "https://images.unsplash.com/photo-1600428853828-189363081920?w=600&q=80",
+    "descripcion_corta": "Limpieza profunda y desintoxicante. El carbón activo absorbe impurezas mientras los aceites naturales mantienen la hidratación de tu piel.",
+    "ingredientes": ["aceite de almendras", "carbón activado", "aceite de árbol de té", "arcilla verde"],
+    "stock": true,
+    "destacado": true
+  },
+  {
+    "id": "jabon-glicerina-rosa-cristalina",
+    "nombre": "Rosa Cristalina",
+    "categoria": "jabones-glicerina",
+    "precio": 8.00,
+    "aroma": "Rosa",
+    "imagen": "https://images.unsplash.com/photo-1598662779094-2220c4bef028?w=600&q=80",
+    "descripcion_corta": "Jabón transparente de glicerina con pétalos de rosa natural. Ultra hidratante y suave, ideal para todo tipo de pieles.",
+    "ingredientes": ["glicerina vegetal", "pétalos de rosa", "esencia de rosa", "vitamina E"],
+    "stock": true,
+    "destacado": true
+  },
+  {
+    "id": "jabon-glicerina-miel-dorada",
+    "nombre": "Miel Dorada",
+    "categoria": "jabones-glicerina",
+    "precio": 8.00,
+    "aroma": "Miel",
+    "imagen": "https://images.unsplash.com/photo-1600428853828-189363081920?w=600&q=80",
+    "descripcion_corta": "Glicerina con miel pura que aporta propiedades antibacterianas y nutritivas. Perfecto para el cuidado diario.",
+    "ingredientes": ["glicerina", "miel pura", "vitamina E", "aceite de jojoba"],
+    "stock": false,
+    "destacado": false
+  },
+  {
+    "id": "jabon-glicerina-lavanda-relajante",
+    "nombre": "Lavanda Relajante",
+    "categoria": "jabones-glicerina",
+    "precio": 8.50,
+    "aroma": "Lavanda",
+    "imagen": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=80",
+    "descripcion_corta": "Jabón translúcido con flores de lavanda. Propiedades calmantes y un aroma que te transportará a campos provenzales.",
+    "ingredientes": ["glicerina vegetal", "lavanda", "aceite esencial de lavanda"],
+    "stock": true,
+    "destacado": false
+  },
+  {
+    "id": "champu-solido-coco-karite",
+    "nombre": "Nutritivo Coco & Karité",
+    "categoria": "champus-solidos",
+    "precio": 12.00,
+    "aroma": "Coco",
+    "imagen": "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=600&q=80",
+    "descripcion_corta": "Para cabello seco y dañado. Nutrición profunda con aceite de coco y manteca de karité. Sin sulfatos ni siliconas.",
+    "ingredientes": ["aceite de coco", "manteca de karité", "proteínas de trigo", "aceite de ricino"],
+    "stock": true,
+    "destacado": true
+  },
+  {
+    "id": "champu-solido-arbol-te",
+    "nombre": "Equilibrante Árbol de Té",
+    "categoria": "champus-solidos",
+    "precio": 11.50,
+    "aroma": "Árbol de Té",
+    "imagen": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=80",
+    "descripcion_corta": "Ideal para cuero cabelludo graso o con caspa. El árbol de té regula la producción de sebo y calma irritaciones.",
+    "ingredientes": ["aceite de árbol de té", "romero", "menta", "arcilla verde"],
+    "stock": true,
+    "destacado": false
+  },
+  {
+    "id": "champu-solido-citricos",
+    "nombre": "Brillo Natural Cítricos",
+    "categoria": "champus-solidos",
+    "precio": 11.00,
+    "aroma": "Cítrico",
+    "imagen": "https://images.unsplash.com/photo-1600857544200-242b1c944ce6?w=600&q=80",
+    "descripcion_corta": "Para todo tipo de cabello. Vitamina C de cítricos naturales que aporta brillo y vitalidad sin apelmazar.",
+    "ingredientes": ["naranja", "limón", "aceite de argán", "aloe vera"],
+    "stock": true,
+    "destacado": false
+  }
+]

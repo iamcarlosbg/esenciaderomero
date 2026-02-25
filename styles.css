@@ -778,3 +778,77 @@ body {
         padding: var(--spacing-sm);
     }
 }
+
+
+/* ============================================
+   TIENDA — Estilos añadidos para integración
+   ============================================ */
+
+/* Animación delay-3 para el hero */
+.fade-in.delay-3 {
+    animation-delay: 0.9s;
+}
+
+/* Botón secundario en hero */
+.btn-tienda {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    margin-left: 1rem;
+}
+.btn-tienda:hover {
+    background: white;
+    color: var(--color-verde-romero);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Botón carrito en navbar */
+.nav-tienda-btn {
+    color: var(--color-verde-romero);
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+}
+.nav-tienda-btn:hover {
+    background: var(--color-beige-claro);
+    color: var(--color-verde-oscuro);
+}
+
+/* Sección de productos: añadir botón CTA a la tienda */
+.productos-header .btn-ir-tienda {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--color-verde-romero);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+.productos-header .btn-ir-tienda:hover {
+    background: var(--color-verde-oscuro);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 600px) {
+    .btn-tienda { margin-left: 0; margin-top: 0.75rem; }
+    .hero-content { display: flex; flex-direction: column; align-items: center; gap: 0; }
+}
